@@ -12,6 +12,6 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: python src/main.py
+      - run: python -m src.main
         env:
           MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
