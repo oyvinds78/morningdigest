@@ -1,6 +1,6 @@
 name: Daily Morning Digest
 
-"on":
+on:
   schedule:
     # Run every day at 6:00 AM Norwegian time (UTC+1/UTC+2)
     # During winter (UTC+1): 5:00 UTC
