@@ -1,0 +1,10 @@
+# Morning Digest
+.env
+*.log
+logs/
+temp/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/temp/
+venv/

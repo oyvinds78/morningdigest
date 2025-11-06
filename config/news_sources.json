@@ -1,0 +1,63 @@
+{
+  "norwegian_local": [
+    {
+      "name": "NRK Trøndelag", 
+      "rss": "https://www.nrk.no/trondelag/toppsaker.rss",
+      "priority": "high"
+    },
+    {
+      "name": "Adressa",
+      "rss": "https://www.adressa.no/rss.xml",
+      "priority": "high"
+    }
+  ],
+  "norwegian_national": [
+    {
+      "name": "NRK Hovedsaker",
+      "rss": "https://www.nrk.no/toppsaker.rss",
+      "priority": "medium"
+    }
+  ],
+  "international": [
+    {
+      "name": "BBC World",
+      "rss": "http://feeds.bbci.co.uk/news/world/rss.xml",
+      "priority": "medium"
+    }
+  ],
+  "tech_sources": [
+    {
+      "name": "Kode24",
+      "rss": "https://www.kode24.no/rss",
+      "priority": "high"
+    }
+  ],
+  "norwegian_national": [
+    {
+      "name": "VG Innenriks",
+      "rss": "https://www.vg.no/rss/feed/?categories=1069",
+      "priority": "medium"
+    }
+  ],
+  "international_tabloid": [
+    {
+      "name": "VG Utenriks",
+      "rss": "https://www.vg.no/rss/feed/?categories=1070",
+      "priority": "low"
+    }
+  ],
+  "norwegian_aftenposten": [
+    {
+      "name": "Aftenposten Hovedsaker",
+      "rss": "https://www.aftenposten.no/rss/",
+      "priority": "medium"
+    }
+  ],
+  "International_aljazeera": [
+    {
+      "name": "Al Jazeera English",
+      "rss": "https://www.aljazeera.com/xml/rss/all.xml",
+      "priority": "medium"
+    }
+  ] 
+}

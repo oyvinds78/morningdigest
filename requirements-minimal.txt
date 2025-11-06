@@ -1,0 +1,8 @@
+# Minimal requirements for testing the orchestration system
+anthropic
+aiohttp
+feedparser
+tiktoken
+python-dateutil
+pyyaml
+jinja2
