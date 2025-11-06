@@ -93,7 +93,7 @@ class MorningDigestCLI:
         self.config = ConfigLoader()
         self.error_handler = ErrorHandler(self.config)
         self.token_counter = TokenCounter(self.config)
-        self.email_sender = EmailSender(self.config)
+        self.email_sender = EmailSender(None, self.config)
         
         # Initialize orchestrator
         self.orchestrator = DigestOrchestrator(
