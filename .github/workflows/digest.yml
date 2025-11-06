@@ -1,10 +1,7 @@
 name: Daily Digest
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
+on: [workflow_dispatch]
 jobs:
-  digest:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,11 +9,6 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: |
-          echo "Starting morning digest..."
-          python -m src.main generate --format=text
-          echo "Morning digest completed"
+      - run: python -m src.main
         env:
           MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-          MORNING_DIGEST_DRY_RUN: true
-          MORNING_DIGEST_LOG_LEVEL: DEBUG
