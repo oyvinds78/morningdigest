@@ -15,10 +15,8 @@ jobs:
       - run: |
           echo "Python version:"
           python --version
-          echo "Current directory:"
-          pwd
-          echo "Directory contents:"
-          ls -la
+          echo "Environment variables:"
+          env | grep MORNING_DIGEST || echo "No MORNING_DIGEST vars found"
           echo "Running morning digest:"
           python -m src.main generate --format=text || echo "Script failed with exit code $?"
         env:
