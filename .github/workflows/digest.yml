@@ -12,6 +12,11 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: python -m src.main
+      - run: |
+          echo "Starting morning digest..."
+          python -m src.main generate --format=text
+          echo "Morning digest completed"
         env:
           MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          MORNING_DIGEST_DRY_RUN: true
+          MORNING_DIGEST_LOG_LEVEL: DEBUG
