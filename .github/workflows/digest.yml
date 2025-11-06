@@ -1,0 +1,17 @@
+name: Daily Digest
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python src/main.py
+        env:
+          MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
