@@ -9,6 +9,15 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: python -m src.main
+      - run: |
+          echo "Python version:"
+          python --version
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Running morning digest:"
+          python -m src.main || echo "Script failed with exit code $?"
         env:
           MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          MORNING_DIGEST_DRY_RUN: true
