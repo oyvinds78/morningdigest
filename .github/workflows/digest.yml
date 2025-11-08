@@ -1,4 +1,4 @@
-  name: Daily Digest
+name: Daily Digest
   on: [workflow_dispatch]
   jobs:
     run:
