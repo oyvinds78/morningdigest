@@ -27,5 +27,4 @@ context:
   timezone: "Europe/Oslo"
   family:
     children_ages: [5, 8]
-
     interests: ["learning", "AI", "ML", "football"]
