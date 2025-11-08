@@ -7,7 +7,7 @@ class TextFormatter:
         self.width = width
         self.wrapper = textwrap.TextWrapper(width=width, initial_indent='  ', subsequent_indent='  ')
     
-    def format_digest(self, digest_data: Dict[str, Any]) -> str:
+    def format(self, digest_data: Dict[str, Any]) -> str:
         """Format the complete morning digest as plain text"""
         
         # Extract data
@@ -317,4 +317,5 @@ def main():
     print(text_output[:500] + "...")
 
 if __name__ == "__main__":
+
     main()
