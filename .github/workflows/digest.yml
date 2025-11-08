@@ -1,29 +1,36 @@
- name: Daily Digest
-  on: [workflow_dispatch]
-  jobs:
-    run:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-python@v4
-          with:
-            python-version: '3.11'
-            cache: 'pip'
-        - run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-        - run: |
-            echo "Generating morning digest..."
-            python -m src.main generate --format=text --output=digest.txt
-            echo "Digest generated!"
-            echo "--- DIGEST CONTENT ---"
-            cat digest.txt || echo "No digest file created"
-          env:
-            MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-            MORNING_DIGEST_DRY_RUN: true
-        - name: Upload digest as artifact
-          uses: actions/upload-artifact@v3
-          with:
-            name: morning-digest
-            path: digest.txt
-          if: always()
+name: Daily Digest
+on: [workflow_dispatch]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Generate digest
+        run: |
+          echo "Generating morning digest..."
+          python -m src.main generate --format=text --output=digest.txt
+          echo "Digest generated!"
+          echo "--- DIGEST CONTENT ---"
+          cat digest.txt || echo "No digest file created"
+        env:
+          MORNING_DIGEST_CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          MORNING_DIGEST_DRY_RUN: true
+      
+      - name: Upload digest as artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: morning-digest
+          path: digest.txt
