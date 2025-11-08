@@ -6,10 +6,13 @@ class TextFormatter:
     def __init__(self, width: int = 80):
         self.width = width
         self.wrapper = textwrap.TextWrapper(width=width, initial_indent='  ', subsequent_indent='  ')
-    
+
     def format(self, digest_data: Dict[str, Any]) -> str:
-        """Format method alias for consistency"""
-        return self.format_digest(digest_data)
+          """Format method alias for consistency"""
+          return self.format_digest(digest_data)
+
+    def format_digest(self, digest_data: Dict[str, Any]) -> str:
+          """Format the complete morning digest as plain text"""
     
     def format_digest(self, digest_data: Dict[str, Any]) -> str:
         """Format the complete morning digest as plain text"""
@@ -322,3 +325,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
