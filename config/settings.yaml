@@ -5,7 +5,7 @@ claude:
   # api_key loaded from MORNING_DIGEST_CLAUDE_API_KEY environment variable
   daily_token_budget: 10000
   hourly_token_limit: 2000
-  per_request_token_limit: 1000
+  per_request_token_limit: 8000
 
 # Email Configuration (optional)
 email:
@@ -27,4 +27,5 @@ context:
   timezone: "Europe/Oslo"
   family:
     children_ages: [5, 8]
+
     interests: ["learning", "AI", "ML", "football"]
